@@ -1,0 +1,39 @@
+<div class="order-detail-wrapper" *ngIf="!loading; else loadingTpl">
+  <h2>订单详情</h2>
+  <nz-descriptions nzBordered nzSize="middle" *ngIf="order">
+    <nz-descriptions-item nzTitle="订单ID">{{ order.id }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="订单号">{{
+      order.orderNumber
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="状态">{{
+      order.status
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="金额">{{
+      order.amount | currency : "CNY"
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="创建日期">{{
+      order.creationDate | date : "yyyy-MM-dd HH:mm:ss"
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="用户ID">{{
+      order.userId
+    }}</nz-descriptions-item>
+  </nz-descriptions>
+
+  <div class="order-detail-actions">
+    <button nz-button nzType="default" (click)="router.navigate(['/orders'])">
+      返回列表
+    </button>
+  </div>
+</div>
+
+<ng-template #loadingTpl>
+  <nz-spin
+    nzTip="加载中..."
+    style="
+      width: 100%;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    "
+  ></nz-spin>
+</ng-template>
