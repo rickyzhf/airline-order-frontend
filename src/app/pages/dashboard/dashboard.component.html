@@ -1,17 +1,17 @@
-<nz-page-header nzTitle="仪表盘" nzSubtitle="欢迎来到后台管理系统">
+<nz-page-header nzTitle="Dashboard" nzSubtitle="welcome">
 </nz-page-header>
 
 <nz-row [nzGutter]="16" class="dashboard-cards" style="margin-bottom: 24px">
   <nz-col nzSpan="6">
     <nz-card>
-      <div class="statistic-title">今日订单数</div>
+      <div class="statistic-title">activeUsersCount</div>
       <div class="statistic-value">{{ todayOrdersCount }}</div>
     </nz-card>
   </nz-col>
 
   <nz-col nzSpan="6">
     <nz-card>
-      <div class="statistic-title">本周收入</div>
+      <div class="statistic-title">income</div>
       <div class="statistic-value">
         {{ weeklyRevenue | currency : "CNY" : "symbol" }}
       </div>
@@ -20,29 +20,21 @@
 
   <nz-col nzSpan="6">
     <nz-card>
-      <div class="statistic-title">未处理订单</div>
+      <div class="statistic-title">order</div>
       <div class="statistic-value">{{ pendingOrdersCount }}</div>
     </nz-card>
   </nz-col>
 
   <nz-col nzSpan="6">
     <nz-card>
-      <div class="statistic-title">用户数</div>
+      <div class="statistic-title">count</div>
       <div class="statistic-value">{{ activeUsersCount }}</div>
     </nz-card>
   </nz-col>
 </nz-row>
 
-<!-- <nz-card nzTitle="销售趋势" style="margin-bottom: 24px">
-  这里可以集成图表库，比如 ngx-echarts, ngx-charts，示例用占位符
-  <div
-    style="height: 300px; text-align: center; line-height: 300px; color: #999"
-  >
-    图表区域（销售趋势折线图）
-  </div>
-</nz-card> -->
 
-<nz-card nzTitle="近期订单">
+<nz-card nzTitle="order">
   <nz-table
     [nzData]="recentOrders"
     [nzFrontPagination]="true"
@@ -51,11 +43,11 @@
   >
     <thead>
       <tr>
-        <th>订单号</th>
-        <th>状态</th>
-        <th>金额</th>
-        <th>创建日期</th>
-        <th>操作</th>
+        <th>order</th>
+        <th>status</th>
+        <th>amount</th>
+        <th>creationDate</th>
+        <th>oper</th>
       </tr>
     </thead>
     <tbody>

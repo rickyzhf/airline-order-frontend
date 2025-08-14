@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   todayOrdersCount = 0;
   weeklyRevenue = 0;
   pendingOrdersCount = 0;
-  activeUsersCount = 0; // 你可以从后端获取或模拟数据
+  activeUsersCount = 0;
 
   recentOrders: Order[] = [];
   loading = false;
@@ -33,7 +33,6 @@ export class DashboardComponent implements OnInit {
 
   loadDashboardData(): void {
     this.loading = true;
-    // 这里简单示例，实际你可能要调用多个接口聚合数据
     this.orderService.getAllOrders().subscribe({
       next: (res) => {
         this.loading = false;

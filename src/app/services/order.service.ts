@@ -17,12 +17,10 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
 
-  /** 获取全部订单 */
   getAllOrders(): Observable<BaseResponse<Order[]>> {
     return this.http.get<BaseResponse<Order[]>>(this.apiUrl);
   }
 
-  /** 根据 ID 获取订单详情 */
   getOrderById(id: number): Observable<BaseResponse<Order>> {
     return this.http.get<BaseResponse<Order>>(`${this.apiUrl}/${id}`);
   }

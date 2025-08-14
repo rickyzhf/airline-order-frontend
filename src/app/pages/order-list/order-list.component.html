@@ -8,11 +8,11 @@
 >
   <thead>
     <tr>
-      <th>订单号</th>
-      <th>状态</th>
-      <th>金额</th>
-      <th>创建日期</th>
-      <th>操作</th>
+      <th>order</th>
+      <th>status</th>
+      <th>amount</th>
+      <th>creationDate</th>
+      <th>oper</th>
     </tr>
   </thead>
   <tbody>
@@ -23,11 +23,9 @@
       <td>{{ order.creationDate | date : "yyyy-MM-dd HH:mm:ss" }}</td>
       <td>
         <button nz-button nzType="link" (click)="viewOrder(order.id)">
-          查看
+          Order
         </button>
-        <!-- <button nz-button nzType="link" (click)="editOrder(order.id)">
-          编辑
-        </button> -->
+
       </td>
     </tr>
   </tbody>

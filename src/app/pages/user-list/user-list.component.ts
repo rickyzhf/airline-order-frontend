@@ -33,12 +33,12 @@ export class UserListComponent implements OnInit {
         if (res.status === 200) {
           this.users = res.data;
         } else {
-          this.message.error(res.message || '加载用户列表失败');
+          this.message.error(res.message || 'error');
         }
       },
       error: () => {
         this.loading = false;
-        this.message.error('加载用户列表失败，请稍后重试');
+        this.message.error('error');
       },
     });
   }

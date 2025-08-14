@@ -31,7 +31,7 @@ export class OrderDetailComponent implements OnInit {
     if (id) {
       this.orderService.getOrderById(id).subscribe({
         next: (res) => {
-          this.order = res.data; // 后端返回 BaseResponse<OrderDTO>
+          this.order = res.data;
           this.loading = false;
         },
         error: () => {

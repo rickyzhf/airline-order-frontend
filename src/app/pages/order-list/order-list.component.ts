@@ -34,12 +34,12 @@ export class OrderListComponent implements OnInit {
         if (res.status === 200) {
           this.orders = res.data;
         } else {
-          this.message.error(res.message || '加载订单失败');
+          this.message.error(res.message || '');
         }
       },
       error: () => {
         this.loading = false;
-        this.message.error('加载订单失败，请稍后重试');
+        this.message.error('');
       },
     });
   }
@@ -49,6 +49,6 @@ export class OrderListComponent implements OnInit {
   }
 
   editOrder(id: number): void {
-    this.message.info(`编辑订单，ID: ${id}，功能待实现`);
+    this.message.info(`id: ${id}`);
   }
 }
