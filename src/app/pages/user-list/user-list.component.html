@@ -1,0 +1,19 @@
+<nz-table
+  #userTable
+  [nzData]="users"
+  [nzLoading]="loading"
+  [nzFrontPagination]="true"
+  [nzPageSize]="10"
+  [nzScroll]="{ x: '600px' }"
+>
+  <thead>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userTable.data">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.role }}</td>
+
+    </tr>
+  </tbody>
+</nz-table>

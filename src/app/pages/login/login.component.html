@@ -1,0 +1,64 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="login-logo">
+      <!-- <img src="assets/logo.png" alt="Logo" /> -->
+      <h1>Flight Management</h1>
+    </div>
+
+    <form
+      nz-form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      nzLayout="horizontal"
+    >
+      <nz-form-item>
+        <nz-form-label nzFor="username" nzRequired [nzSpan]="6"
+          >User</nz-form-label
+        >
+        <nz-form-control [nzSpan]="14" nzErrorTip="Please input User">
+          <input
+            nz-input
+            id="username"
+            formControlName="username"
+            placeholder="Please input User"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label nzFor="password" nzRequired [nzSpan]="6"
+          >Password</nz-form-label
+        >
+        <nz-form-control [nzSpan]="14" nzErrorTip="Please input password">
+          <input
+            nz-input
+            [type]="passwordVisible ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            placeholder="Please input password"
+          />
+          <i
+            nz-icon
+            [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+            class="password-toggle-icon"
+            (click)="togglePasswordVisibility()"
+          ></i>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button
+            nz-button
+            nzType="primary"
+            [nzLoading]="loading"
+            [disabled]="loginForm.invalid || loading"
+            class="login-submit-btn"
+          >
+            Login
+          </button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

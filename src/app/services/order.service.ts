@@ -1,0 +1,27 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Order } from '../shared/models';
+
+interface BaseResponse<T> {
+  status: number;
+  message: string;
+  data: T;
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class OrderService {
+  private apiUrl = '/api/orders';
+
+  constructor(private http: HttpClient) {}
+
+  getAllOrders(): Observable<BaseResponse<Order[]>> {
+    return this.http.get<BaseResponse<Order[]>>(this.apiUrl);
+  }
+
+  getOrderById(id: number): Observable<BaseResponse<Order>> {
+    return this.http.get<BaseResponse<Order>>(`${this.apiUrl}/${id}`);
+  }
+}
